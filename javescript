@@ -1,4 +1,3 @@
-// Función simple para agregar productos al carrito
 function agregarCarrito(nombre, precio) {
     alert(`Has agregado "${nombre}" al carrito. Precio: $${precio.toLocaleString()}`);
 }
