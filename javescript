@@ -11,21 +11,17 @@ function actualizarCarrito() {
     const lista = document.getElementById('lista-carrito');
     const totalSpan = document.getElementById('total');
 
-    // Limpiar lista
     lista.innerHTML = '';
 
-    // Agregar productos
-    carrito.forEach((producto) => {
+    carrito.forEach(producto => {
         const li = document.createElement('li');
         li.textContent = `${producto.nombre} - $${producto.precio.toLocaleString()}`;
         lista.appendChild(li);
     });
 
-    // Actualizar total
     totalSpan.textContent = total.toLocaleString();
 }
 
-// Vaciar carrito
 document.getElementById('vaciar-carrito').addEventListener('click', () => {
     carrito = [];
     total = 0;
