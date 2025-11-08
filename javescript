@@ -1,0 +1,68 @@
+const products = [
+  {
+    id: 1,
+    title: "Vestido Esmeralda Elegante",
+    desc: "Tela satinada verde con corte moderno y abertura lateral.",
+    price: 250000,
+    image: "Imagen de WhatsApp 2025-11-07 a las 18.54.14_8114561b.jpg"
+  }
+];
+
+const cart = { items: [] };
+const $ = sel => document.querySelector(sel);
+
+function formatPrice(n) {
+  return `$${n.toLocaleString("es-CO")}`;
+}
+
+function renderProducts() {
+  const grid = $("#productsGrid");
+  grid.innerHTML = "";
+  products.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="product-thumb" style="background-image:url('${p.image}')"></div>
+      <h3>${p.title}</h3>
+      <p>${p.desc}</p>
+      <div class="price">${formatPrice(p.price)} COP</div>
+      <button class="nav-btn primary" onclick="addToCart(${p.id})">Añadir al carrito</button>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function addToCart(id) {
+  const p = products.find(x => x.id === id);
+  const found = cart.items.find(i => i.id === id);
+  if (found) found.qty++;
+  else cart.items.push({ ...p, qty: 1 });
+  renderCart();
+  $("#cartMini").style.display = "block";
+}
+
+function renderCart() {
+  const el = $("#cartItems");
+  el.innerHTML = "";
+  if (cart.items.length === 0) {
+    el.innerHTML = `<div class="cart-empty">Tu carrito está vacío.</div>`;
+  } else {
+    cart.items.forEach(it => {
+      const row = document.createElement("div");
+      row.innerHTML = `
+        <p>${it.title} - ${it.qty} x ${formatPrice(it.price)}</p>
+      `;
+      el.appendChild(row);
+    });
+  }
+  $("#cartTotal").textContent = formatPrice(cart.items.reduce((s, i) => s + i.price * i.qty, 0));
+  $("#open-cart").textContent = `Carrito (${cart.items.reduce((s, i) => s + i.qty, 0)})`;
+}
+
+$("#open-cart").addEventListener("click", () => {
+  const el = $("#cartMini");
+  el.style.display = el.style.display === "none" ? "block" : "none";
+});
+$("#closeCart").addEventListener("click", () => $("#cartMini").style.display = "none");
+$("#checkoutBtn").addEventListener("click", () => alert("Gracias por tu compra 💚"));
+renderProducts();
