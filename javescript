@@ -12,7 +12,7 @@ const cart = { items: [] };
 const $ = sel => document.querySelector(sel);
 
 function formatPrice(n) {
-  return `$${n.toLocaleString("es-CO")}`;
+  return `$${n.toLocaleString("es-CO")} COP`;
 }
 
 function renderProducts() {
@@ -25,7 +25,7 @@ function renderProducts() {
       <div class="product-thumb" style="background-image:url('${p.image}')"></div>
       <h3>${p.title}</h3>
       <p>${p.desc}</p>
-      <div class="price">${formatPrice(p.price)} COP</div>
+      <div class="price">${formatPrice(p.price)}</div>
       <button class="nav-btn primary" onclick="addToCart(${p.id})">Añadir al carrito</button>
     `;
     grid.appendChild(card);
@@ -49,13 +49,13 @@ function renderCart() {
   } else {
     cart.items.forEach(it => {
       const row = document.createElement("div");
-      row.innerHTML = `
-        <p>${it.title} - ${it.qty} x ${formatPrice(it.price)}</p>
-      `;
+      row.innerHTML = `<p>${it.title} — ${it.qty} x ${formatPrice(it.price)}</p>`;
       el.appendChild(row);
     });
   }
-  $("#cartTotal").textContent = formatPrice(cart.items.reduce((s, i) => s + i.price * i.qty, 0));
+  $("#cartTotal").textContent = formatPrice(
+    cart.items.reduce((s, i) => s + i.price * i.qty, 0)
+  );
   $("#open-cart").textContent = `Carrito (${cart.items.reduce((s, i) => s + i.qty, 0)})`;
 }
 
