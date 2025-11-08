@@ -9,7 +9,7 @@
 /* Body */
 body {
     background-color: #1a1a1a; /* Fondo elegante */
-    color: #f5f5f5;
+    color: #f5f5f5; /* Texto claro para contraste */
 }
 
 /* Header */
@@ -18,7 +18,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: #222; /* Elegante y oscuro */
+    background-color: #222; /* Header oscuro elegante */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -45,24 +45,23 @@ header nav ul li a {
     text-decoration: none;
     color: #f5f5f5;
     font-weight: 600;
-    transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #ff6f61;
+    color: #ff6f61; /* Color de acento */
 }
 
 /* Hero */
 .hero {
     text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(135deg, #222, #333);
+    background: linear-gradient(135deg, #1a1a1a, #333333); /* Fondo elegante degradado */
 }
 
 .hero h2 {
     font-size: 3em;
     margin-bottom: 20px;
-    color: #ff6f61;
+    color: #ff6f61; /* Color de acento */
 }
 
 .hero p {
@@ -76,15 +75,7 @@ header nav ul li a:hover {
     padding: 12px 30px;
     border: none;
     border-radius: 30px;
-    font-size: 1em;
     cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
-    text-decoration: none;
-}
-
-.btn:hover {
-    background-color: #ff3b2f;
-    transform: scale(1.05);
 }
 
 /* Productos */
@@ -96,7 +87,7 @@ header nav ul li a:hover {
 .productos h2 {
     font-size: 2.5em;
     margin-bottom: 50px;
-    color: #f5f5f5;
+    color: #ff6f61;
 }
 
 .galeria {
@@ -106,15 +97,9 @@ header nav ul li a:hover {
 }
 
 .producto {
-    background-color: #2a2a2a;
+    background-color: #2a2a2a; /* Fondo de cada producto */
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
-}
-
-.producto:hover {
-    transform: translateY(-10px);
 }
 
 .producto img {
@@ -124,14 +109,10 @@ header nav ul li a:hover {
 }
 
 .producto h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
     color: #ff6f61;
 }
 
 .producto p {
-    font-weight: bold;
-    margin-bottom: 15px;
     color: #f5f5f5;
 }
 
@@ -142,12 +123,6 @@ header nav ul li a:hover {
     padding: 10px 20px;
     border-radius: 30px;
     cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
-}
-
-.btn-agregar:hover {
-    background-color: #ff3b2f;
-    transform: scale(1.05);
 }
 
 /* Contacto */
