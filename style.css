@@ -8,8 +8,8 @@
 
 /* Body */
 body {
-    background-color: #1a1a1a; /* Fondo elegante */
-    color: #f5f5f5; /* Texto claro para contraste */
+    background-color: #000000; /* Fondo negro elegante */
+    color: #f5f5f5;
 }
 
 /* Header */
@@ -18,10 +18,11 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: #222; /* Header oscuro elegante */
+    background-color: #111;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 header .logo {
@@ -48,20 +49,19 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #ff6f61; /* Color de acento */
+    color: #ff6f61;
 }
 
 /* Hero */
 .hero {
     text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(135deg, #1a1a1a, #333333); /* Fondo elegante degradado */
 }
 
 .hero h2 {
     font-size: 3em;
     margin-bottom: 20px;
-    color: #ff6f61; /* Color de acento */
+    color: #ff6f61;
 }
 
 .hero p {
@@ -76,6 +76,7 @@ header nav ul li a:hover {
     border: none;
     border-radius: 30px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 /* Productos */
@@ -97,7 +98,7 @@ header nav ul li a:hover {
 }
 
 .producto {
-    background-color: #2a2a2a; /* Fondo de cada producto */
+    background-color: #1a1a1a;
     padding: 20px;
     border-radius: 15px;
 }
@@ -125,9 +126,66 @@ header nav ul li a:hover {
     cursor: pointer;
 }
 
+/* Carrito flotante */
+.carrito {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    width: 300px;
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.carrito h3 {
+    margin-bottom: 15px;
+    color: #ff6f61;
+}
+
+.carrito ul {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.carrito li {
+    margin-bottom: 10px;
+}
+
+#vaciar-carrito {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#vaciar-carrito:hover {
+    background-color: #ff3b2f;
+}
+
+/* Botón flotante */
+.btn-flotante {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
 /* Contacto */
 .contacto {
-    background-color: #222;
+    background-color: #111;
     padding: 60px 50px;
     text-align: center;
 }
