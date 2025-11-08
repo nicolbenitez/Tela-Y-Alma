@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tela y Alma — Tienda</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="logo.svg" alt="Logo Tela y Alma" class="logo">
+      <div>
+        <h1>Tela y Alma</h1>
+        <p>Ropa y accesorios — Estilo joven y auténtico</p>
+      </div>
+    </div>
+
+    <nav>
+      <button class="nav-btn">Colección</button>
+      <button class="nav-btn">Novedades</button>
+      <button class="nav-btn">Contacto</button>
+      <button id="open-cart" class="nav-btn primary">Carrito (0)</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <h2>Moda con historia — diseñada para sentirse única</h2>
+      <p>Prendas y accesorios pensados para expresar tu personalidad.</p>
+
+      <div class="cta-row">
+        <button class="btn btn-primary">Compra ahora</button>
+        <button class="btn btn-outline">Ver ofertas</button>
+      </div>
+    </div>
+
+    <aside class="hero-img">
+      <img src="https://images.unsplash.com/photo-1503342452485-86f7dffb4b3b?q=80&w=720&auto=format&fit=crop" alt="Colección Tela y Alma">
+    </aside>
+  </section>
+
+  <main class="gallery" id="productsGrid"></main>
+
+  <aside class="cart-mini" id="cartMini" style="display:none">
+    <h3>Tu carrito</h3>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">Tu carrito está vacío.</div>
+    </div>
+    <div class="cart-footer">
+      <p>Total: <strong id="cartTotal">$0</strong></p>
+      <button class="nav-btn" id="closeCart">Cerrar</button>
+      <button class="nav-btn primary" id="checkoutBtn">Pagar</button>
+    </div>
+  </aside>
+
+  <div class="modal" id="modal">
+    <div class="modal-card">
+      <div class="modal-left">
+        <img id="modalImg" src="" alt="imagen producto">
+      </div>
+      <div class="modal-right">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc" class="small"></p>
+        <div id="modalPrice" class="price"></div>
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="modalAdd">Añadir al carrito</button>
+          <button class="btn btn-outline" id="modalClose">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
