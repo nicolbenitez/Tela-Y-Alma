@@ -1,59 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tela y Alma — Tienda Online</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela y Alma</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <img src="logo.svg" alt="Logo Tela y Alma" class="logo">
-      <div>
-        <h1>Tela y Alma</h1>
-        <p>Ropa y accesorios — Estilo joven y auténtico</p>
-      </div>
-    </div>
+    <!-- Header con Logo y Menú -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo Tela y Alma">
+            <h1>Tela y Alma</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <nav>
-      <button class="nav-btn">Colección</button>
-      <button class="nav-btn">Novedades</button>
-      <button class="nav-btn">Contacto</button>
-      <button id="open-cart" class="nav-btn primary">Carrito (0)</button>
-    </nav>
-  </header>
+    <!-- Sección Hero -->
+    <section class="hero">
+        <h2>Descubre tu estilo único</h2>
+        <p>Ropa y accesorios modernos para cada personalidad</p>
+        <a href="#productos" class="btn">Ver productos</a>
+    </section>
 
-  <section class="hero">
-    <div class="hero-left">
-      <h2>Moda con alma — refleja tu esencia</h2>
-      <p>Descubre prendas y accesorios con estilo, textura y significado.</p>
+    <!-- Sección de Productos -->
+    <section id="productos" class="productos">
+        <h2>Nuestros productos</h2>
+        <div class="galeria">
+            <div class="producto">
+                <img src="producto1.jpg" alt="Producto 1">
+                <h3>Vestido Floral</h3>
+                <p>$120.000</p>
+                <button class="btn-agregar" onclick="agregarCarrito('Vestido Floral', 120000)">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="producto2.jpg" alt="Producto 2">
+                <h3>Bolso Moderno</h3>
+                <p>$80.000</p>
+                <button class="btn-agregar" onclick="agregarCarrito('Bolso Moderno', 80000)">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="producto3.jpg" alt="Producto 3">
+                <h3>Blusa Casual</h3>
+                <p>$60.000</p>
+                <button class="btn-agregar" onclick="agregarCarrito('Blusa Casual', 60000)">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="producto4.jpg" alt="Producto 4">
+                <h3>Accesorio Chic</h3>
+                <p>$35.000</p>
+                <button class="btn-agregar" onclick="agregarCarrito('Accesorio Chic', 35000)">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
 
-      <div class="cta-row">
-        <button class="btn btn-primary">Comprar ahora</button>
-        <button class="btn btn-outline">Ver colección</button>
-      </div>
-    </div>
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contacto">
+        <h2>Contacto</h2>
+        <p>Escríbenos en nuestras redes o WhatsApp:</p>
+        <p>Instagram: <a href="https://instagram.com/telayalma" target="_blank">@telayalma</a></p>
+        <p>WhatsApp: <a href="https://wa.me/573026334176" target="_blank">+57 302 6334176</a></p>
+    </section>
 
-    <aside class="hero-img">
-      <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=720&auto=format&fit=crop" alt="Colección Tela y Alma">
-    </aside>
-  </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Tela y Alma. Todos los derechos reservados.</p>
+    </footer>
 
-  <main class="gallery" id="productsGrid"></main>
-
-  <aside class="cart-mini" id="cartMini" style="display:none">
-    <h3>Tu carrito</h3>
-    <div class="cart-items" id="cartItems">
-      <div class="cart-empty">Tu carrito está vacío.</div>
-    </div>
-    <div class="cart-footer">
-      <p>Total: <strong id="cartTotal">$0</strong></p>
-      <button class="nav-btn" id="closeCart">Cerrar</button>
-      <button class="nav-btn primary" id="checkoutBtn">Pagar</button>
-    </div>
-  </aside>
-
-  <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
